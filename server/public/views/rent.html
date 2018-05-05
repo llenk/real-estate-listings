@@ -1,1 +1,16 @@
-<h1>APARTMENTS FOR RENT</h1>
+<div class="container">
+        <h1>APARTMENTS FOR RENT</h1>
+        <div class="row">
+            <div class="col-sm-6 col-md-4 col-lg-3" ng-repeat="prop in vm.rentProperties.props">
+                <div class="card h-100 text-center">
+                    <img class="card-img-top" ng-src="images/{{prop.image_path}}" alt="{{prop.city}}">
+                    <div class="card-body" style="padding:13px">
+                        <h5 class="card-title">{{prop.city}}</h5>
+                        <p class="card-text" style="margin:0px">{{prop.cost.toLocaleString('en', {style: 'currency', currency: 'USD'})}}</p>
+                        <p class="card-text" style="margin-bottom:8px">{{prop.sqft.toLocaleString('en')}} sq ft</p>
+                        <button type="button" class="btn btn-success">Rent Now!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
