@@ -11,7 +11,8 @@ app.use(bodyParser.json());
 app.use(express.static('server/public'));
 
 app.get('/properties', function(req, res) {
-    pool.query(`SELECT * FROM "properties"`)
+    pool.query(`SELECT * FROM "properties"
+        WHERE "type" LIKE $1`, [req.query.type])
     .then(function(response) {
         res.send(response);
     }).catch(function(error) {

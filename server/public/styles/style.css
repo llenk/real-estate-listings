@@ -1,3 +1,39 @@
-body {
-    background: blueviolet;
+body{
+    background: #fbf7ff;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #888888;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+
+li {
+    float: left;
+    border-right: 1px solid #666666;
+}
+
+a {
+    display: block;
+    padding: 8px;
+    color: black
+}
+
+a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+[class*="col-"] {
+    margin-bottom: 15px;
+} 
+
+.card p {
+    font-size: 12px;
 }
