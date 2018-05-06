@@ -30,6 +30,10 @@ a:hover {
     text-decoration: none;
 }
 
+form div {
+    margin: 10px;
+}
+
 [class*="col-"] {
     margin-bottom: 15px;
 } 

@@ -8,4 +8,44 @@
         this the easiest process you've ever been through. You'll be shocked at how easy it is scroll through our selection
         of beautiful homes and find the one that's perfect for you. What are you waiting for? Get buying today!
     </p>
+    <form ng-submit="vm.listProperty()">
+        <h2>List Your Property</h2>
+        <div class="row">
+            <div class="col-sm-4 col-md-3 col-lg-2">
+                <input type="text" placeholder="city" ng-model="vm.newProperty.city" required>
+            </div>
+            <div class="col-sm-4 col-md-3 col-lg-2">
+                <input type="number" placeholder="asking price" ng-model="vm.newProperty.cost" required>
+            </div>
+            <div class="col-sm-4 col-md-3 col-lg-2">
+                <input type="number" placeholder="square feet" ng-model="vm.newProperty.sqft" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <input name="type" type="radio" value="sale" id="sale" ng-model="vm.newProperty.type" required>
+                <label for="sale">For Sale</label>
+                <input name="type" type="radio" value="rent" id="rent" ng-model="vm.newProperty.type" required>
+                <label for="rent">For Rent</label>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <select ng-model="vm.newProperty.image_path" required>
+                    <option value="">Image</option>
+                    <option value="classic-flats.jpg">Classic Flats</option>
+                    <option value="haunted.jpg">Haunted</option>
+                    <option value="older.jpg">Older</option>
+                    <option value="rental.jpg">Rental</option>
+                    <option value="rental2.jpg">Other Rental</option>
+                    <option value="shiny.jpg">Shiny</option>
+                    <option value="stony.jpg">Stony</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <input type="submit" value="List Your Property!">
+            </div>
+        </div>
+
+    </form>
 </div>
