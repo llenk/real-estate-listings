@@ -8,7 +8,7 @@
                     <h5 class="card-title">{{prop.city}}</h5>
                     <p class="card-text" style="margin:0px">{{prop.cost.toLocaleString('en', {style: 'currency', currency: 'USD'})}}</p>
                     <p class="card-text" style="margin-bottom:8px">{{prop.sqft.toLocaleString('en')}} sq ft</p>
-                    <button type="button" class="btn btn-success">Buy Now!</button>
+                    <button type="button" class="btn btn-success" ng-click="vm.deleteListing(prop)">Buy Now!</button>
                 </div>
             </div>
         </div>

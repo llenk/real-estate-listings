@@ -28,7 +28,7 @@
 
 ## Stretch Goals
 
-- [ ] Ability to delete an existing listing. Place the `delete` button on each listing card.
+- [x] Ability to delete an existing listing. Place the `delete` button on each listing card.
 - [ ] Move all `$http` requests to an Angular Service
 
 
