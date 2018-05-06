@@ -1,4 +1,6 @@
-# real-estate-listings
+# Notes
+
+## TODO
 
 - [x] Create a Full Stack application from the ground up using Angular, Node, Express, and SQL (SEAN stack).
 - [x] Work with the data set provided to you.
@@ -29,7 +31,7 @@
 ## Stretch Goals
 
 - [x] Ability to delete an existing listing. Place the `delete` button on each listing card.
-- [ ] Move all `$http` requests to an Angular Service
+- [x] Move all `$http` requests to an Angular Service
 
 
 ## More Stretch Goals
