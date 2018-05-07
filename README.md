@@ -38,4 +38,4 @@
 
 - [x] Display the least expensive property featured prominently at the top of the view
 - [ ] Ability to search or filter by various parameters (try doing this using a server side route with a query parameter)
-- [ ] Add other images to your application
+- [x] Add other images to your application
