@@ -1,5 +1,7 @@
 # Notes
 
+Could I get comments on how I combined the code for rent and sale in the service? Is there a better way that making that array that contains 'rent' and 'sale'? Also, should the cheapest property thing be in another get request? Or is there a way to send in different params for the get request, so there only needs to be one, even if I added in the filtering for stretch mode? I ran out of time, but I'd like to look into that later. 
+
 ## TODO
 
 - [x] Create a Full Stack application from the ground up using Angular, Node, Express, and SQL (SEAN stack).
