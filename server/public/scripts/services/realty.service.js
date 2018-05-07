@@ -29,42 +29,30 @@ app.service('RealtyService', ['$http', function ($http) {
         });
     };
 
-    // SECTION FOR RENT
+    // SECTION FOR RENT+SALE
 
-    self.rentProperties = {props: []};
-    self.getRentProperties = function() {
-        $http({
-            method: 'GET', 
-            url: '/properties',
-            params: {
-                type: 'rent'
-            }
-        }).then(function(response) {
-            self.rentProperties.props = response.data.rows;
-        }).catch(function(error) {
-            console.log(error);
-        });
+    self.properties = {
+        rent: [], 
+        sale: []
     };
-    self.getRentProperties();
-
-    //SECTION FOR SALE
-
-    self.saleProperties = {props: []};
-    self.getSaleProperties = function() {
-        $http({
-            method: 'GET', 
-            url: '/properties',
-            params: {
-                type: 'sale'
-            }
-        }).then(function(response) {
-            self.saleProperties.props = response.data.rows;
-        }).catch(function(error) {
-            console.log(error);
+    self.types = ['rent', 'sale'];
+    
+    self.getProperties = function() {
+        self.types.forEach(function(element) {
+            $http({
+                method: 'GET', 
+                url: '/properties',
+                params: {
+                    type: element
+                }
+            }).then(function(response) {
+                self.properties[element] = response.data.rows;
+            }).catch(function(error) {
+                console.log(error);
+            });
         });
     };
 
-    // DELETE LISTING FOR RENT AND SALE
     self.deleteListing = function (prop) {
         $http({
             method: 'DELETE',
@@ -74,10 +62,10 @@ app.service('RealtyService', ['$http', function ($http) {
             }
         }).then(function(response) {
             console.log(response);
-            self.getRentProperties();
-            self.getSaleProperties();
+            self.getProperties();
         }).catch(function(error) {
             console.log(error);
         });
     };
+    self.getProperties();
 }]);

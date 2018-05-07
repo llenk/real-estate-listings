@@ -1,7 +1,6 @@
 app.controller('rentController', ['$http', 'RealtyService', function($http, RealtyService) {
     var self = this;
 
-    self.rentProperties = RealtyService.rentProperties;
-    self.getRentProperties = RealtyService.getRentProperties;
+    self.properties = RealtyService.properties;
     self.deleteListing = RealtyService.deleteListing;
 }]);
