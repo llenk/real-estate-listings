@@ -1,6 +1,27 @@
 <div class="container">
     <h1>Houses for Sale!</h1>
     <div class="row">
+            <div class="col-7">
+                <h3>Are You Broke??</h3>
+            </div>
+            <div class="col-6">
+                <div class="card h-100 text-center">
+                    <img class="card-img-top" ng-src="images/{{vm.properties.cheapestsale.image_path}}" alt="{{vm.properties.cheapestrent.city}}">
+                    <div class="card-body" style="padding:13px">
+                        <h5 class="card-title">{{vm.properties.cheapestsale.city}}</h5>
+                        <p class="card-text" style="margin:0px">{{vm.properties.cheapestsale.cost.toLocaleString('en', {style: 'currency', currency: 'USD'})}}</p>
+                        <p class="card-text" style="margin-bottom:8px">{{vm.properties.cheapestsale.sqft.toLocaleString('en')}} sq ft</p>
+                        <button type="button" class="btn btn-success" ng-click="vm.deleteListing(vm.properties.cheapestsale)">Buy Now!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <h2>Not Broke? Good news.</h2>
+            </div>
+        </div>
+    <div class="row">
         <div class="col-sm-6 col-md-4 col-lg-3" ng-repeat="prop in vm.properties.sale">
             <div class="card h-100 text-center">
                 <img class="card-img-top" ng-src="images/{{prop.image_path}}" alt="{{prop.city}}">

@@ -33,7 +33,9 @@ app.service('RealtyService', ['$http', function ($http) {
 
     self.properties = {
         rent: [], 
-        sale: []
+        sale: [],
+        cheapestrent: {}, //I'm sure there's a solution that lets me do camel case
+        cheapestsale: {} //But I did not look
     };
     self.types = ['rent', 'sale'];
     
@@ -47,11 +49,21 @@ app.service('RealtyService', ['$http', function ($http) {
                 }
             }).then(function(response) {
                 self.properties[element] = response.data.rows;
+                self.cheapestProperty(self.properties[element], element);
             }).catch(function(error) {
                 console.log(error);
             });
         });
     };
+
+    self.cheapestProperty = function(props, type) {
+        self.properties['cheapest' + type] = props[0];
+        for (let i=1; i<props.length; i++) {
+            if (self.properties['cheapest' + type].cost > props[i].cost) {
+                self.properties['cheapest' + type] = props[i];
+            }
+        }
+    }
 
     self.deleteListing = function (prop) {
         $http({
