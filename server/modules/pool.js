@@ -27,6 +27,7 @@ if (process.env.DATABASE_URL) {
         idleTimeoutMillis: 30000 //timeout in milliseconds
     }
 }
+console.log(config);
 
 const pool = new Pool(config);
 
